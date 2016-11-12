@@ -1,5 +1,5 @@
 # RetrofitDownload
-断点续传与多线程下载
+断点续传与多线程下载（base on EasyRetofit）
 
                 DownLoadManager.getInstance().downLoad(list, "1", new DownLoadBackListener() {
 
