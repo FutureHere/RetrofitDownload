@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 downLoadModel2.saveName = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "baidu.exe";
                 list.add(downLoadModel2);
 
-                DownLoadManager.getInstance().downLoad(list, "1", new DownLoadBackListener() {
+                DownLoadManager.getInstance().downLoad(list, "MainActivity", new DownLoadBackListener() {
 
                     @Override
                     public void onError(DownLoadEntity downLoadEntity, Throwable throwable) {
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.bt_stop).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DownLoadManager.getInstance().cancel("1");
+                DownLoadManager.getInstance().cancel("MainActivity");
             }
         });
     }
