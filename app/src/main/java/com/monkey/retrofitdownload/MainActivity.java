@@ -13,6 +13,10 @@ import android.widget.Toast;
 import com.hly.easyretrofit.download.DownLoadBackListener;
 import com.hly.easyretrofit.download.db.DownLoadEntity;
 import com.hly.easyretrofit.download.DownLoadManager;
+import com.hly.easyretrofit.retrofit.NetWorkRequest;
+import com.hly.easyretrofit.retrofit.NetworkResponse;
+import com.monkey.retrofitdownload.entity.ResponseLoginEntity;
+import com.monkey.retrofitdownload.net.ApiManager;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -76,6 +80,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DownLoadManager.getInstance().cancel("MainActivity");
+            }
+        });
+
+
+        /**
+         *
+         * 异步请求
+         *
+         */
+
+        NetWorkRequest.getInstance().asyncNetWork(this.getClass().getSimpleName(), 1, ApiManager.getInstance().getApiService().login(), new NetworkResponse<ResponseLoginEntity>() {
+            @Override
+            public void onDataReady(ResponseLoginEntity response) {
+
+            }
+
+            @Override
+            public void onDataError(int requestCode, int responseCode, String message) {
+
             }
         });
     }

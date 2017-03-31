@@ -2,7 +2,7 @@ package com.monkey.retrofitdownload;
 
 import android.app.Application;
 
-import com.hly.easyretrofit.retrofit.NetWorkRequest;
+import com.monkey.retrofitdownload.net.ApiManager;
 
 /**
  * Created by hly on 2016/11/4.
@@ -14,6 +14,6 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        NetWorkRequest.getInstance().init(this, "http://test.kuaikuaikeji.com/kas/");
+        ApiManager.getInstance().init(this);
     }
 }
